@@ -133,4 +133,21 @@ git show a8f5c92
 
 কোন File Change হয়েছে
 কী Code Add/Remove হয়েছে
+Commit Details দেখা
+git show commit-id
+
+Example:
+
+git show a8f5c92
+
+এটি দেখাবে:
+
+কোন File Change হয়েছে
+কী Code Add/Remove হয়েছে
+
+
+git status → বর্তমান অবস্থা দেখায়
+
+git log → পুরোনো পরিবর্তনের ইতিহাস দেখায়.
+
 ``` 
