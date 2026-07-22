@@ -41,3 +41,15 @@ Local Repository
        | (GitHub)       |
        +----------------+
 ```
+## What is git status?
+```
+git status হলো একটি Git command যা আমাদের Project-এর বর্তমান অবস্থা (Current State) দেখায়।
+
+এটি দেখায়:
+
+কোন File modified হয়েছে
+কোন File new/untracked
+কোন File staged হয়েছে
+কোন File commit করার জন্য ready
+কোন Branch-এ আমরা আছি
+```
