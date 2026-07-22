@@ -18,9 +18,12 @@ git merge feature         # Branch Merge
 git pull          # Remote থেকে Update আনা
 git push          # GitHub-এ Code পাঠান
 ```
-## GitHub
+## GitHub ( github is a cloud platform/ online repository)
 ```
+
 GitHub = Online Repository + Collaboration
+আমাদের Project-এর Repository Online-এ Host করে এবং Team-এর সদস্যদের Remote থেকে Access ও Collaboration করার সুবিধা দেয়।
+
 GitHub হলো Git Repository Hosting Platform।
 Code Online-এ সংরক্ষণ করে।
 Team Collaboration সহজ করে।
