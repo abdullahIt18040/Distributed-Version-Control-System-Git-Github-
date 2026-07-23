@@ -23,3 +23,36 @@ git pull origin main
 * `main` = যেখান থেকে changes আনবে
 
 > **সহজভাবে মনে রাখুন:** `git pull` = **Remote → Local (Download + Merge)**.
+>
+> ## `git pull` – গুরুত্বপূর্ণ নোট
+
+### ১. `git pull` করলে ভেতরে কী ঘটে?
+
+`git pull` মূলত দুটি কাজ একসাথে করে:
+
+```bash
+git fetch
+git merge
+```
+
+* **`git fetch`** → Remote repository থেকে সর্বশেষ changes Download করে।
+* **`git merge`** → Download করা changes Local branch-এর সাথে Merge করে।
+
+---
+
+### ২. কখন `git pull` করবে?
+
+* ✅ কাজ শুরু করার আগে (Latest code নেওয়ার জন্য)
+* ✅ `git push` করার আগে (নিজের code up-to-date আছে কিনা নিশ্চিত করতে)
+
+---
+
+### ৩. `git pull` না করলে কী সমস্যা হতে পারে?
+
+* Local code পুরনো (Outdated) হয়ে যাবে।
+* `git push` করার সময় **Push Rejected** হতে পারে।
+* Merge Conflict হওয়ার সম্ভাবনা বাড়ে।
+* Team-এর সর্বশেষ changes মিস হয়ে যেতে পারে।
+
+> **মনে রাখুন:** `git pull = git fetch + git merge`
+
