@@ -11,9 +11,10 @@ URL হলো GitHub repository-এর ঠিকানা।
 এটি কোড Push করে না, শুধু Remote repository-এর ঠিকানা সেট করে।
 এরপর git push origin main ব্যবহার করে কোড GitHub-এ পাঠানো যায়।
 ```
-## git push --all origin
+## git push -u --all origin
 ```
-git push --all origin
+git push -u --all origin
+git push -u  --all origin
 
 সংক্ষিপ্ত নোট:
 
@@ -22,3 +23,4 @@ Local repository-এর সব branches origin remote-এ Push করে।
 origin = Remote repository-এর নাম (alias)।
 এটি সব branch GitHub-এ আপলোড করে, শুধু main নয়।
 ```
+cmd: 
