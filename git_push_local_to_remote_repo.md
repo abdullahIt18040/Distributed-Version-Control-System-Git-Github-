@@ -24,7 +24,7 @@ origin = Remote repository-এর নাম (alias)।
 এটি সব branch GitHub-এ আপলোড করে, শুধু main নয়।
 ```
 cmd: 
-## git push -u --all origin
+## git push -u --all origin/ git push -u origin abdullah 
 git push -u --all origin
 ```
 -u (or --set-upstream) কেন ব্যবহার করা হয়?
