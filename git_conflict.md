@@ -77,3 +77,106 @@ git pull origin feature
 * **`-u` = `--set-upstream`**
 * **প্রথমবার Branch Push করার সময় ব্যবহার করা হয়।**
 * **এটি Local branch-এর সাথে Remote branch-এর tracking relationship তৈরি করে।**
+
+  # Merge Conflict
+
+## Merge Conflict কী?
+
+**Merge Conflict** ঘটে যখন দুটি Branch-এর **একই File-এর একই লাইনে** ভিন্ন পরিবর্তন করা হয় এবং Git বুঝতে পারে না কোন পরিবর্তনটি রাখবে।
+
+---
+
+## উদাহরণ
+
+### `main` Branch
+
+```java
+public String getName() {
+    return "Mamun";
+}
+```
+
+### `feature` Branch
+
+```java
+public String getName() {
+    return "Abdullah";
+}
+```
+
+এখন `feature` branch-কে `main`-এ Merge করলে:
+
+```bash
+git checkout main
+git merge feature
+```
+
+Git Conflict দেখাবে:
+
+```text
+Auto-merging UserService.java
+CONFLICT (content): Merge conflict in UserService.java
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+---
+
+## Conflict File
+
+Git File-এ নিচের Marker যোগ করবে:
+
+```java
+<<<<<<< HEAD
+return "Mamun";
+=======
+return "Abdullah";
+>>>>>>> feature
+```
+
+* `<<<<<<< HEAD` → বর্তমান Branch (`main`)
+* `=======` → দুই Version-এর বিভাজক
+* `>>>>>>> feature` → Merge হওয়া Branch (`feature`)
+
+---
+
+## Merge Conflict সমাধান
+
+1. File খুলে সঠিক Code নির্বাচন বা Combine করুন।
+
+```java
+return "Abdullah";
+```
+
+অথবা
+
+```java
+return "Mamun Abdullah";
+```
+
+2. Conflict Marker (`<<<<<<<`, `=======`, `>>>>>>>`) মুছে ফেলুন।
+3. File Save করুন।
+
+তারপর:
+
+```bash
+git add .
+git commit
+```
+
+Merge সম্পন্ন হবে।
+
+---
+
+## Merge Conflict এড়ানোর উপায়
+
+* নিয়মিত `git pull` করুন।
+* ছোট ছোট Commit করুন।
+* একই File-এর একই অংশে একাধিক Developer একসাথে পরিবর্তন করা এড়িয়ে চলুন।
+* Feature Branch-কে নিয়মিত `main`-এর সাথে Sync রাখুন।
+
+---
+
+## মনে রাখুন
+
+> **Merge Conflict = একই File-এর একই লাইনে দুই Branch-এর ভিন্ন পরিবর্তন হলে Git সিদ্ধান্ত নিতে না পারার অবস্থা।**
+
